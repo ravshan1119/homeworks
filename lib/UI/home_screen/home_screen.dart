@@ -11,6 +11,7 @@ class HomeScreen extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Colors.white,
         body: Column(
       children: [
         SizedBox(
@@ -27,7 +28,7 @@ class HomeScreen extends StatelessWidget {
                   alignment: Alignment.center,
                   children: [
                     Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(100),
@@ -48,7 +49,6 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SvgPicture.asset(MyImages.scrollTool),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -57,27 +57,27 @@ class HomeScreen extends StatelessWidget {
                     width: 78,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(18),
-                        color: Color(0xFFc7f9cc)),
-                    child: Center(
+                        color: const Color(0xFFE9F9F2)),
+                    child: const Center(
                       child: Text(
                         "Popular",
                         style: TextStyle(color: Color(0xFF15BE77)),
                       ),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(
                     height: 34,
                     width: 34,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                        color: Color(0xFFc7f9cc)),
+                        color: const Color(0xFFE9F9F2)),
                     child: Padding(
                       padding: const EdgeInsets.all(7),
                       child: SvgPicture.asset(MyImages.location),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 12,
                   ),
                   Container(
@@ -85,7 +85,7 @@ class HomeScreen extends StatelessWidget {
                     width: 34,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                        color: Color(0xFFffccd5)),
+                        color: const Color(0xFFFFE8E8)),
                     child: Padding(
                       padding: const EdgeInsets.all(7),
                       child: SvgPicture.asset(MyImages.heart),
@@ -93,36 +93,36 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              const Text(
+              Text(
                 "Rainbow Sandwich \nSugarless",
                 style: TextStyle(
-                    color: Color(0xfF09051C),
-                    fontSize: 27,
+                    color: const Color(0xfF09051C),
+                    fontSize: (height > 812) ? 27 : 20,
                     fontWeight: FontWeight.w800),
               ),
               Row(
                 children: [
                   SvgPicture.asset(MyImages.star),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text(
+                  const Text(
                     "4,8 Rating",
                     style: TextStyle(
                       color: Color(0xFF3B3B3B),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 24,
                   ),
                   SvgPicture.asset(MyImages.shopping),
-                  SizedBox(
+                  const SizedBox(
                     width: 5.67,
                   ),
-                  Text(
+                  const Text(
                     "2000+ Order",
                     style: TextStyle(
                       color: Color(0xFF3B3B3B),
@@ -130,16 +130,16 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
-              Text(
+              const Text(
                   "Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Velit non est cillum consequat cupidatat ex Lorem laboris labore aliqua ad duis eu laborum."),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 25),
                 child: SizedBox(
                   width: width,
-                  height: 57,
+                  height: height > 600 ? 57 : 45,
                   child: ElevatedButton(
                       onPressed: () {},
                       style: ButtonStyle(
@@ -147,7 +147,7 @@ class HomeScreen extends StatelessWidget {
                               MaterialStateProperty.all(RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16),
                           )),
-                          backgroundColor: MaterialStatePropertyAll<Color>(
+                          backgroundColor: const MaterialStatePropertyAll<Color>(
                               Color(0xFF53E88B))),
                       child: const Text(
                         "Add to chast",
